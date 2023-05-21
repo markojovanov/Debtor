@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_nav"
+    app:startDestination="@id/payments">
+
+    <fragment
+        android:id="@+id/payments"
+        android:name="com.markojovanov.debtor.ui.Payments"
+        android:label="Payments"
+        tools:layout="@layout/fragment_payments" >
+        <action
+            android:id="@+id/action_payments_to_addPayment"
+            app:destination="@id/addPayment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_payments_to_paidDebts"
+            app:destination="@id/paidDebts"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_payments_to_debtorDetail"
+            app:destination="@id/debtorDetail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.markojovanov.debtor.ui.Settings"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_to_payments"
+            app:destination="@id/payments" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPayment"
+        android:name="com.markojovanov.debtor.ui.AddPayment"
+        android:label="Add payment"
+        tools:layout="@layout/fragment_add_payment" >
+        <action
+            android:id="@+id/action_addPayment_to_payments"
+            app:destination="@id/payments" />
+    </fragment>
+    <fragment
+        android:id="@+id/paidDebts"
+        android:name="com.markojovanov.debtor.ui.PaidDebts"
+        android:label="Paid Debts" >
+        <action
+            android:id="@+id/action_paidDebts_to_debtorDetail"
+            app:destination="@id/debtorDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/debtorDetail"
+        android:name="com.markojovanov.debtor.ui.DebtorDetail"
+        android:label="Debtor Detail" >
+        <argument
+            android:name="debtor_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_debtorDetail_to_partialPayments"
+            app:destination="@id/partialPayments"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_debtorDetail_to_paidDebts"
+            app:destination="@id/paidDebts"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_debtorDetail_to_editDebtor"
+            app:destination="@id/editDebtor" />
+    </fragment>
+    <fragment
+        android:id="@+id/partialPayments"
+        android:name="com.markojovanov.debtor.ui.PartialPayments"
+        android:label="Partial Payment" >
+        <action
+            android:id="@+id/action_partialPayments_to_debtorDetail"
+            app:destination="@id/debtorDetail" />
+        <argument
+            android:name="debtorId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/editDebtor"
+        android:name="com.markojovanov.debtor.ui.EditDebtor"
+        android:label="EditDebtor" >
+        <action
+            android:id="@+id/action_editDebtor_to_debtorDetail"
+            app:destination="@id/debtorDetail" />
+        <argument
+            android:name="debtor_id"
+            app:argType="integer" />
+        <argument
+            android:name="remainingMoney"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

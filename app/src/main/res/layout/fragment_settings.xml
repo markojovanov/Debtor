@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".ui.Settings">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/notificationTogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:background="@drawable/check_box_background"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_baseline_notifications_24"
+        android:drawableTint="@color/main_background_color"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/currencyInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationTogle"
+        app:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <AutoCompleteTextView
+            android:id="@+id/currencyDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:alpha=".7"
+            android:inputType="none"
+            android:padding="8dp"
+            android:text="@string/DOLLAR"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/removeAdsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_marginTop="8dp"
+        android:text="Remove Ads"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyInputLayout" />
+
+    <Button
+        android:id="@+id/saveSettingsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textStyle="bold"
+        app:backgroundTint="@color/main_background_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

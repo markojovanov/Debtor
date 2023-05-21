@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".ui.DebtorDetail">
+
+    <ImageView
+      android:id="@+id/owesSymbol"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:scaleType="centerCrop"
+      android:src="@drawable/ic_baseline_arrow_circle_right_24"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/debtorNameTxtDetail"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:drawableEnd="@drawable/ic_baseline_edit_24"
+      android:fontFamily="sans-serif"
+      android:text="Boris"
+      android:textColor="@color/main_background_color"
+      android:textSize="22sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/owesSymbol"
+      app:layout_constraintTop_toTopOf="@+id/owesSymbol" />
+
+    <TextView
+      android:id="@+id/referenceDetailTxt"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginBottom="8dp"
+      android:fontFamily="sans-serif"
+      android:text="This person owes you"
+      android:textColor="@color/main_background_color"
+      app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+      app:layout_constraintEnd_toEndOf="@+id/debtorNameTxtDetail"
+      app:layout_constraintStart_toStartOf="@+id/debtorNameTxtDetail"
+      app:layout_constraintTop_toBottomOf="@+id/debtorNameTxtDetail" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:background="@drawable/check_box_background"
+      android:backgroundTint="@color/debtor_detail_dashboard"
+      android:padding="25dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/owesSymbol">
+
+      <TextView
+        android:id="@+id/totalMoneyDetailTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="Total paid"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/reaminingMoneyDetailTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+        android:id="@+id/reaminingMoneyDetailTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="Remaining"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/totalMoneyDetailTxt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+        android:id="@+id/totalMoneyDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="$ 2,090.10"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/remainingMoneyDetail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalMoneyDetailTxt" />
+
+
+      <TextView
+        android:id="@+id/remainingMoneyDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="$ 1,900.10"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/totalMoneyDetail"
+        app:layout_constraintTop_toBottomOf="@+id/reaminingMoneyDetailTxt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+      android:id="@+id/partialPaymentBtn"
+      style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:drawableEnd="@drawable/coins_24"
+      android:fontFamily="sans-serif"
+      android:gravity="start|center"
+      android:padding="6dp"
+      android:text="Partial payment"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <Button
+      android:id="@+id/markAsPaidBtn"
+      style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:drawableEnd="@drawable/checked_24"
+      android:drawableTint="@color/main_background_color"
+      android:fontFamily="sans-serif"
+      android:gravity="start|center"
+      android:padding="8dp"
+      android:text="Mark as paid"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/partialPaymentBtn" />
+
+
+    <Button
+      android:id="@+id/saveButtonDetail"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:enabled="false"
+      android:text="Close payment"
+      android:textColor="@color/white"
+      android:textSize="12sp"
+      android:textStyle="bold"
+      app:backgroundTint="@color/unavailable_save_button_color"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/partialPaymentRecycler"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginBottom="8dp"
+      app:layout_constraintBottom_toTopOf="@+id/saveButtonDetail"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/markAsPaidBtn" />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

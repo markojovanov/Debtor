@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Debtor</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="CURRENCY">currency</string>
+    <string name="DOLLAR">$</string>
+    <string name="payment_deleted">Payment deleted.</string>
+    <string name="undo">Undo</string>
+    <string name="due_date">Due date:</string>
+    <string name="mark_as_paid">Mark as paid</string>
+    <string name="make_sure_mark_as_paid">Make sure you mark as paid before closing payment.</string>
+  <string name="delete_payment_info_message">Payment deleted.</string>
+  <string name="undo_action_text">Undo</string>
+  <string name="exceeded_limit_info_message">You have exceeded the limit of the remaining amount.</string>
+  <string name="mandatory_amount_info_message">Money amount is mandatory.</string>
+
+  <string-array name="currency_array">
+        <item>$</item>
+        <item>€</item>
+        <item>£</item>
+    </string-array>
+</resources>
